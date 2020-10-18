@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?selectableItemBackground"
+    app:cardCornerRadius="10dp">
+
+    <RelativeLayout
+        android:id="@+id/rl_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/item_image"
+            android:layout_width="86dp"
+            android:layout_height="95dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@id/item_image"
+            android:layout_alignBottom="@id/item_image"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@id/item_image"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_title"
+                android:layout_width="251dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:text="Some title"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/item_description"
+                android:layout_width="265dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Some description"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
