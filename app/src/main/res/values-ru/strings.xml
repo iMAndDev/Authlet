@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prompt_password">Пароль</string>
+    <string name="action_sign_in">Разблокировать</string>
+    <string name="login_failed">Вход: неуспешно</string>
+    <string name="welcome">Добро пожаловать!</string>
+    <string name="invalid_password">Длина пароля должна быть >5 символов</string>
+    <string name="login_caption">Разблокируйте хранилище</string>
+    <string name="dev_credit">разработано Dev Maksem</string>
+    <string name="language_title">Язык</string>
+    <string name="language_list_dialog">Выберите язык</string>
+    <string name="changes_lang">Меняет язык приложениня</string>
+    <string name="changes_theme">Меняет тему приложения</string>
+    <string name="theme_header">Тема приложения</string>
+    <string name="general_header">Общие</string>
+    <string name="credits_header">Автор</string>
+    <string name="author_header">Authlet - Простое и безопасное приложение 2FA</string>
+    <string name="author_desc_header">0.1 пре-альфа</string>
+    <string name="version_desc_header">0.1 пре-альфа</string>
+    <string name="version_header">Версия приложения</string>
+</resources>

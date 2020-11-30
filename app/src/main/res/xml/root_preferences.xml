@@ -1,0 +1,39 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/general_header">
+
+        <ListPreference
+        android:id="@+id/lang"
+        android:icon="@drawable/ic_language_black"
+        android:entryValues="@array/reply_values"
+        android:key="lang"
+        android:defaultValue="false"
+        android:dialogTitle="@string/language_list_dialog"
+        android:summary="@string/changes_lang"
+        android:title="@string/language_title"/>
+
+        <ListPreference
+            android:id="@+id/theme"
+            android:icon="@drawable/ic_theme_black"
+            android:entryValues="@array/reply_values"
+            android:key="theme"
+            android:defaultValue="false"
+            android:dialogTitle="@string/language_list_dialog"
+            android:title="@string/theme_header"/>
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/credits_header">
+        <EditTextPreference
+            android:id="@+id/credits"
+            android:title="@string/author_header"
+            android:summary="@string/app_year_header"/>
+
+        <EditTextPreference
+            android:id="@+id/version"
+            android:title="@string/version_header"
+            android:summary="@string/version_desc_header"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

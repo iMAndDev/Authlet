@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prompt_password">Пароль</string>
+    <string name="action_sign_in">Розблокувати</string>
+    <string name="welcome">Ласкаво просимо!</string>
+    <string name="invalid_password">Довжина паролю повинна бути >5 символів</string>
+    <string name="login_failed">Вхід: невдало</string>
+    <string name="login_caption">Розблокуйте сховище</string>
+    <string name="dev_credit">розроблено Dev Maksem</string>
+    <string name="language_title">Мова</string>
+    <string name="language_list_dialog">Оберіть мову</string>
+    <string name="changes_lang">Змінює мову застосунку</string>
+    <string name="theme_header">Тема застосунку</string>
+    <string name="general_header">Загальні</string>
+    <string name="credits_header">Автор</string>
+    <string name="changes_theme">Змінює тему додатку</string>
+    <string name="author_header">Authlet - простий і безпечний застосунок 2FA</string>
+    <string name="author_desc_header">0.1 пре-альфа</string>
+    <string name="version_desc_header">0.1 пре-альфа</string>
+    <string name="version_header">Версія додатку</string>
+</resources>
