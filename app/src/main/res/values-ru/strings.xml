@@ -18,4 +18,6 @@
     <string name="author_desc_header">0.1 пре-альфа</string>
     <string name="version_desc_header">0.1 пре-альфа</string>
     <string name="version_header">Версия приложения</string>
+    <string name="login_auth_error">Неверный пароль. Попробуйте еще</string>
+    <string name="string_empty_error">Сначала введите пароль</string>
 </resources>

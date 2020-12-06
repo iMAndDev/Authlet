@@ -36,4 +36,7 @@
     <string name="attachment_summary_on" translatable="false">Automatically download attachments for incoming emails</string>
     <string name="attachment_summary_off" translatable="false">Only download attachments when manually requested</string>
     <string name="changes_theme">Changes the application theme</string>
+    <string name="login_auth_error">Password is not valid. Try again</string>
+    <string name="author_desc_header">0.1 pre-alpha</string>
+    <string name="string_empty_error">Enter password first</string>
 </resources>

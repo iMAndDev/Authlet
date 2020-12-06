@@ -18,4 +18,6 @@
     <string name="author_desc_header">0.1 пре-альфа</string>
     <string name="version_desc_header">0.1 пре-альфа</string>
     <string name="version_header">Версія додатку</string>
+    <string name="login_auth_error">Невірний пароль. Спробуйте ще раз</string>
+    <string name="string_empty_error">Спочатку введіть пароль</string>
 </resources>

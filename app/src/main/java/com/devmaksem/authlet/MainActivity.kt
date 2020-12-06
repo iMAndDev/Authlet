@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.devmaksem.authlet.base.BaseFragment
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseFragment(R.layout.activity_main) {
 
@@ -19,7 +20,10 @@ class MainActivity : BaseFragment(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        navigation.navigate(R.id.action_mainFragment_to_loginFragment)
+        toolbar?.setBackgroundColor(R.drawable.gradient_color)
+        toolbar?.title = "  Authlet"
+        toolbar?.setCollapseIcon(R.drawable.app_logo)
+
         //setContentView(R.layout.activity_main)
 /*
         listAdapter = ListAdapter()
