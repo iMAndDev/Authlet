@@ -3,8 +3,6 @@
     <string name="prompt_password">Пароль</string>
     <string name="action_sign_in">Разблокировать</string>
     <string name="login_failed">Вход: неуспешно</string>
-    <string name="welcome">Добро пожаловать!</string>
-    <string name="invalid_password">Длина пароля должна быть >5 символов</string>
     <string name="login_caption">Разблокируйте хранилище</string>
     <string name="dev_credit">разработано Dev Maksem</string>
     <string name="language_title">Язык</string>
@@ -20,4 +18,10 @@
     <string name="version_header">Версия приложения</string>
     <string name="login_auth_error">Неверный пароль. Попробуйте еще</string>
     <string name="string_empty_error">Сначала введите пароль</string>
+    <string name="codename_hint">Имя сервиса</string>
+    <string name="codesecret_hint">Вставьте сюда свой секрет</string>
+    <string name="buttontext_add_code">Добавить новый код</string>
+    <string name="field_empty_error">Некоторые поля пустые</string>
+    <string name="secret_too_short_error">Перепроверьте секрет</string>
+    <string name="done_message">Готово!</string>
 </resources>

@@ -37,9 +37,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:importantForAutofill="yes"
-        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginTop="@dimen/tiny_margin"
         android:hint="@string/prompt_password"
-        android:textColorHint="@color/colorText"
+        android:textColorHint="@color/colorHint"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,6 +71,6 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="@dimen/small_margin" />
+        android:layout_marginBottom="@dimen/tiny_margin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

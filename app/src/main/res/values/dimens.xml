@@ -1,9 +1,17 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">50dp</dimen>
-    <dimen name="login_cap_size">40sp</dimen>
-    <dimen name="logo_size">256sp</dimen>
-    <dimen name="small_margin">20sp</dimen>
-    <dimen name="button_text">18sp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Various margins. -->
+    <dimen name="so_smol_margin">5sp</dimen>
+    <dimen name="tiny_margin">20sp</dimen>
+    <dimen name="medium_margin">75sp</dimen>
+    <dimen name="big_margin">100sp</dimen>
+
+    <!-- Dimensions of UI components. -->
+    <dimen name="login_cap_size">35sp</dimen>
+    <dimen name="logo_size">256sp</dimen>
+    <dimen name="button_text">18sp</dimen>
+    <dimen name="delete_button_size">36sp</dimen>
 </resources>

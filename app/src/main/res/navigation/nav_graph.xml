@@ -4,21 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@+id/loginFragment">
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.devmaksem.authlet.MainActivity"
-        tools:layout="@layout/activity_main">
-    </fragment>
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.devmaksem.authlet.ui.login.LoginActivity"
+        android:name="com.devmaksem.authlet.login.LoginActivity"
         tools:layout="@layout/fragment_login">
 
         <action
             android:id="@+id/action_loginFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
 
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.devmaksem.authlet.MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_addCodeFragment"
+            app:destination="@id/addCodeFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/addCodeFragment"
+        android:name="com.devmaksem.authlet.AddCodeFragment"
+        tools:layout="@layout/add_code_fragment">
+        <action
+            android:id="@+id/action_addCodeFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
 
 </navigation>
