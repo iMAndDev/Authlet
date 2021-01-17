@@ -22,6 +22,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
     private val timerLengthSeconds = 30L
     private var secondsRemaining = 30L
     private var timer: Timer? = null
+    private var isTimerAvailable = true
 
 
     private lateinit var listAdapter: ListAdapter
@@ -38,12 +39,12 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         }
 
 
-        listAdapter = ListAdapter() {listItem ->
+        listAdapter = ListAdapter() { listItem ->
             copyCode(listItem.description)
         }
 
 
-        fab_add.setOnClickListener{
+        fab_add.setOnClickListener {
             findNavController(it).navigate(R.id.action_mainFragment_to_addCodeFragment)
         }
 
@@ -55,13 +56,14 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
 
     override fun onPause() {
         super.onPause()
-
+        isTimerAvailable = false
         timer!!.cancel()
     }
 
 
     override fun onResume() {
         super.onResume()
+        isTimerAvailable = true
         secondsRemaining = 30L
         startTimer()
     }
@@ -85,7 +87,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
     }
 
 
-    inner class Timer(millis: Long): CountDownTimer(millis, 1000){
+    inner class Timer(millis: Long) : CountDownTimer(millis, 1000) {
         var millisUntilFinished = 0L
 
         override fun onTick(millisUntilFinished: Long) {
@@ -102,7 +104,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         }
 
         override fun onFinish() {
-            Toast.makeText(context,"Done!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Done!", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -115,14 +117,13 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
 
     private fun updateTimer(addMillis: Long) {
 
-        if (timer != null){
+        if (timer != null) {
             val millis = timer!!.millisUntilFinished + addMillis
 
             timer!!.cancel()
             timer = Timer(millis)
             timer!!.start()
-        }
-        else{
+        } else {
             startTimer()
         }
 
@@ -132,7 +133,11 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
 
 
     private fun updateCountdownUI() {
-        countdown.progress = (timerLengthSeconds - secondsRemaining).toInt()
+        if (isTimerAvailable) {
+            countdown.progress = (timerLengthSeconds - secondsRemaining).toInt()
+        } else {
+            //nothing
+        }
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
