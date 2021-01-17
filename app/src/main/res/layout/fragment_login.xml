@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,33 +11,35 @@
 
     <ImageView
         android:id="@+id/app_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/small_margin"
+        android:layout_width="@dimen/logo_size"
+        android:layout_height="@dimen/logo_size"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/app_logo" />
 
     <TextView
         android:id="@+id/login_cap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/small_margin"
         android:text="@string/login_caption"
+        android:textColor="@color/colorPrimary"
         android:textAlignment="center"
         android:textSize="@dimen/login_cap_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/app_logo"/>
+        app:layout_constraintTop_toBottomOf="@id/app_logo"
+        app:layout_constraintBottom_toTopOf="@id/passwordField"
+        android:layout_marginBottom="@dimen/login_cap_size"/>
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwordField"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:importantForAutofill="no"
-        android:layout_marginTop="@dimen/small_margin"
+        android:importantForAutofill="yes"
+        android:layout_marginTop="@dimen/tiny_margin"
         android:hint="@string/prompt_password"
+        android:textColorHint="@color/colorHint"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,31 +47,30 @@
         app:layout_constraintTop_toBottomOf="@id/login_cap" />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginBottom="64dp"
-        android:enabled="false"
-        android:background="@color/colorAccent"
+        android:enabled="true"
+        android:background="@drawable/gradient_color"
         android:text="@string/action_sign_in"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/button_text"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/credits"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password"/>
+        app:layout_constraintTop_toBottomOf="@id/passwordField"/>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/credits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dev_credit"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="@dimen/small_margin"
-        tools:layout_editor_absoluteY="602dp" />
+        android:layout_marginBottom="@dimen/tiny_margin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

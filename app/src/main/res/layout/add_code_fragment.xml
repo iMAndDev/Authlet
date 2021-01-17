@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/tiny_margin">
+
+
+    <EditText
+        android:id="@+id/serviceName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/big_margin"
+        android:layout_marginStart="?attr/actionBarSize"
+        android:layout_marginEnd="?attr/actionBarSize"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="@string/codename_hint"
+        android:textColorHint="@color/colorHint"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/valueSecret"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginStart="?attr/actionBarSize"
+        android:layout_marginEnd="?attr/actionBarSize"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="@string/codesecret_hint"
+        android:textColorHint="@color/colorHint"
+        app:layout_constraintTop_toTopOf="@id/serviceName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/addCodeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="?attr/actionBarSize"
+        android:layout_marginEnd="?attr/actionBarSize"
+        android:layout_marginBottom="@dimen/logo_size"
+        android:text="@string/buttontext_add_code"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/button_text"
+        android:background="@drawable/gradient_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,8 +2,6 @@
 <resources>
     <string name="prompt_password">Пароль</string>
     <string name="action_sign_in">Розблокувати</string>
-    <string name="welcome">Ласкаво просимо!</string>
-    <string name="invalid_password">Довжина паролю повинна бути >5 символів</string>
     <string name="login_failed">Вхід: невдало</string>
     <string name="login_caption">Розблокуйте сховище</string>
     <string name="dev_credit">розроблено Dev Maksem</string>
@@ -18,4 +16,12 @@
     <string name="author_desc_header">0.1 пре-альфа</string>
     <string name="version_desc_header">0.1 пре-альфа</string>
     <string name="version_header">Версія додатку</string>
+    <string name="login_auth_error">Невірний пароль. Спробуйте ще раз</string>
+    <string name="string_empty_error">Спочатку введіть пароль</string>
+    <string name="codename_hint">Ім\'я сервісу</string>
+    <string name="codesecret_hint">Вставте сюди свій секрет</string>
+    <string name="buttontext_add_code">Додати новий код</string>
+    <string name="field_empty_error">Деякі поля не заповнені</string>
+    <string name="secret_too_short_error">Перепровірте секрет</string>
+    <string name="done_message">Готово!</string>
 </resources>

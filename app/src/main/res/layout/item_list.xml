@@ -5,6 +5,9 @@
     android:id="@+id/item_cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/tiny_margin"
+    android:layout_marginStart="@dimen/so_smol_margin"
+    android:layout_marginEnd="@dimen/so_smol_margin"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?selectableItemBackground"
@@ -28,6 +31,7 @@
             android:src="@mipmap/ic_launcher_round" />
 
         <LinearLayout
+            android:id="@+id/linear"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignTop="@id/item_image"
@@ -39,21 +43,32 @@
 
             <TextView
                 android:id="@+id/item_title"
-                android:layout_width="251dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/tiny_margin"
                 android:text="Some title"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"/>
 
             <TextView
                 android:id="@+id/item_description"
-                android:layout_width="265dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="@dimen/tiny_margin"
                 android:text="Some description"
                 android:textSize="20sp"/>
 
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/delete_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/delete_button_size"
+            android:layout_alignTop="@id/linear"
+            android:layout_alignBottom="@id/linear"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_delete_black" />
+
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

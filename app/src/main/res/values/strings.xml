@@ -2,13 +2,10 @@
     <string name="app_name" translatable="false">Authlet</string>
 
     <!-- Login Titles -->
-    <string name="title_activity_login" translatable="false">LoginActivity</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Unlock</string>
     <string name="dev_credit">developed by Dev Maksem</string>
     <string name="login_caption">Unlock the vault</string>
-    <string name="welcome">Welcome!</string>
-    <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
     <!-- Preference Titles -->
@@ -16,7 +13,6 @@
     <string name="general_header">General</string>
     <string name="credits_header">Credits</string>
     <string name="author_header">Authlet - Simple and secure 2FA application</string>
-    <string name="sync_header" translatable="false">Sync</string>
     <string name="version_header">App version</string>
 
     <!-- Preference Description Titles -->
@@ -25,15 +21,19 @@
     <string name="app_year_header" translatable="false">Dev-Maksem, 2020</string>
 
     <!-- Messages Preferences -->
-    <string name="signature_title" translatable="false">Your signature</string>
     <string name="language_list_dialog">Choose language</string>
     <string name="language_title">Language</string>
     <string name="theme_header">Application theme</string>
 
     <!-- Sync Preferences -->
-    <string name="sync_title" translatable="false">Sync email periodically</string>
-    <string name="attachment_title" translatable="false">Download incoming attachments</string>
-    <string name="attachment_summary_on" translatable="false">Automatically download attachments for incoming emails</string>
-    <string name="attachment_summary_off" translatable="false">Only download attachments when manually requested</string>
     <string name="changes_theme">Changes the application theme</string>
+    <string name="login_auth_error">Password is not valid. Try again</string>
+    <string name="author_desc_header">0.1 pre-alpha</string>
+    <string name="string_empty_error">Enter password first</string>
+    <string name="codename_hint">Name of service</string>
+    <string name="codesecret_hint">Paste your secret here</string>
+    <string name="buttontext_add_code">Add new code</string>
+    <string name="field_empty_error">Some of fields are empty</string>
+    <string name="secret_too_short_error">Double-check your secret</string>
+    <string name="done_message">Done!</string>
 </resources>

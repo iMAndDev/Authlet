@@ -3,19 +3,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@+id/mainFragment">
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.devmaksem.authlet.MainActivity"
-        tools:layout="@layout/activity_main">
-        <action
-            android:id="@+id/action_mainFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-    </fragment>
+    app:startDestination="@+id/loginFragment">
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.devmaksem.authlet.ui.login.LoginActivity"
-        tools:layout="@layout/fragment_login" />
+        android:name="com.devmaksem.authlet.login.LoginActivity"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.devmaksem.authlet.SettingsFragment"
+        tools:layout="@layout/fragment_preferences"
+        >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.devmaksem.authlet.MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_addCodeFragment"
+            app:destination="@id/addCodeFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/addCodeFragment"
+        android:name="com.devmaksem.authlet.AddCodeFragment"
+        tools:layout="@layout/add_code_fragment">
+        <action
+            android:id="@+id/action_addCodeFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 
 </navigation>

@@ -1,6 +1,5 @@
 package com.devmaksem.authlet
 
-import android.app.LauncherActivity
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +7,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import java.util.zip.Inflater
 
-class ListAdapter() :
+class ListAdapter(private val listener: (ListItem) -> Unit) :
     RecyclerView.Adapter<ListAdapter.CodeViewHolder>() {
         var listOfItems = ArrayList<ListItem> ()
 
@@ -24,13 +22,9 @@ class ListAdapter() :
             val itemTitle: TextView = itemView.findViewById(R.id.item_title)
             val itemDesc: TextView = itemView.findViewById(R.id.item_description)
             val itemPicture: ImageView = itemView.findViewById(R.id.item_image)
-
+            val delete: ImageView = itemView.findViewById(R.id.delete_item)
             init {
                 itemView.setOnClickListener {
-                    /*val clipboard = Context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-                    val clipboard = Context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager*/
-                    val textToCopy = itemTitle.text
-                    //ItemTitle is equal to generated hash
 
                     /*val clip = ClipData.newPlainText("RANDOM UUID",textToCopy)
                     clipboard.setPrimaryClip(clip)*/
@@ -54,6 +48,15 @@ class ListAdapter() :
             holder.itemTitle.text = codeItem.title
             holder.itemDesc.text = codeItem.description
             //holder.itemImage = codeItem.image
+
+            holder.itemView.setOnClickListener{
+                listener(codeItem)
+            }
+
+            holder.delete.setOnClickListener{
+                listOfItems.remove(codeItem)
+                notifyDataSetChanged()
+            }
         }
 
         override fun getItemCount(): Int = listOfItems.size
