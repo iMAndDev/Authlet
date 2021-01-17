@@ -1,24 +1,7 @@
 package com.devmaksem.authlet
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.preference.PreferenceFragmentCompat
+import com.devmaksem.authlet.base.BaseFragment
 
-class SettingsFragment : AppCompatActivity() {
+class SettingsFragment : BaseFragment(R.layout.fragment_preferences) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.settings_fragment)
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.settings, SettingsFragment())
-            .commit()
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
-
-    class SettingsFragment : PreferenceFragmentCompat() {
-        override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-            setPreferencesFromResource(R.xml.root_preferences, rootKey)
-        }
-    }
 }

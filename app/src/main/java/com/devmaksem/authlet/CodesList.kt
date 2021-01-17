@@ -4,5 +4,5 @@ import java.util.*
 
 var listCodes: ArrayList<ListItem> = arrayListOf(
     ListItem("GitHub", "123456"),
-    ListItem("HRTC Education Platform", "694200")
+    ListItem("HRTC Education Platform", "694200" )
 )

@@ -17,12 +17,23 @@
     </fragment>
 
     <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.devmaksem.authlet.SettingsFragment"
+        tools:layout="@layout/fragment_preferences"
+        >
+
+    </fragment>
+
+    <fragment
         android:id="@+id/mainFragment"
         android:name="com.devmaksem.authlet.MainFragment"
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_addCodeFragment"
             app:destination="@id/addCodeFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
 
 

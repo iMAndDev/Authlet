@@ -17,10 +17,17 @@ class AddCodeFragment: BaseFragment(R.layout.add_code_fragment) {
             if (serviceName.text.isEmpty() || valueSecret.text.isEmpty()) {
                 errorMessage += R.string.field_empty_error
             }
-            else if (valueSecret.text.length < 16) {
+            if (valueSecret.text.length < 16) {
                 errorMessage += R.string.secret_too_short_error
             }
-            else {
+            if (errorMessage.isNotEmpty()) {
+                Snackbar.make(it, errorMessage, 7000)
+            }
+
+            if (valueSecret.text.length >= 16 &&
+                serviceName.text.isNotEmpty() &&
+                valueSecret.text.isNotEmpty()
+            ) {
                 val hash: String = generateHash(valueSecret.text.toString())
                 val item = ListItem(serviceName.text.toString(), hash)
 
@@ -33,10 +40,6 @@ class AddCodeFragment: BaseFragment(R.layout.add_code_fragment) {
                 Snackbar.make(it, R.string.done_message, 1000)
                 Thread.sleep(200)
                 androidx.navigation.Navigation.findNavController(it).navigate(R.id.action_addCodeFragment_to_mainFragment)
-            }
-
-            if (errorMessage != "") {
-                Snackbar.make(it, errorMessage, 7000)
             }
         }
     }

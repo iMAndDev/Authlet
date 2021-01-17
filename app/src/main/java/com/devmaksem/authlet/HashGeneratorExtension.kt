@@ -10,6 +10,12 @@ fun generateHash(secret: String): String {
     //generatedCode.text = "${SimpleDateFormat("HH:mm:ss").format(timestamp)} -> $code"
 }
 
-fun updateHashes(list: ArrayList<ListItem>) {
-    for (i in list) { generateHash(i.description) }
+fun updateHashes(list: ArrayList<ListItem>): ArrayList<ListItem> {
+    for (item in list) {
+        val newHash = generateHash(item.description)
+        item.description = newHash
+        //TODO: u know da way
+    }
+
+    return list
 }

@@ -3,11 +3,13 @@ package com.devmaksem.authlet
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.res.Configuration
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
 import android.widget.Toast
 import androidx.navigation.NavController
+import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devmaksem.authlet.base.BaseFragment
@@ -21,16 +23,8 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
     private var secondsRemaining = 30L
     private var timer: Timer? = null
 
+
     private lateinit var listAdapter: ListAdapter
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        Toast.makeText(context, "Done!", Toast.LENGTH_SHORT).show()
-
-        //setContentView(R.layout.fragment_main)
-    }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -39,6 +33,10 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         toolbar.setTitleTextColor(getResources().getColor(R.color.colorSecondary))
         toolbar?.setNavigationIcon(R.drawable.smol_app_logo)
 
+        settings.setOnClickListener {
+            findNavController(it).navigate(R.id.action_mainFragment_to_settingsFragment)
+        }
+
 
         listAdapter = ListAdapter() {listItem ->
             copyCode(listItem.description)
@@ -46,14 +44,26 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
 
 
         fab_add.setOnClickListener{
-            androidx.navigation.Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_addCodeFragment)
+            findNavController(it).navigate(R.id.action_mainFragment_to_addCodeFragment)
         }
 
         countdown.max = timerLengthSeconds.toInt()
         setAdapter()
         startTimer()
+    }
 
-        updateCountdownUI()
+
+    override fun onPause() {
+        super.onPause()
+
+        timer!!.cancel()
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        secondsRemaining = 30L
+        startTimer()
     }
 
 
@@ -63,8 +73,6 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
 
         val clipData = ClipData.newPlainText("text", desc)
         clipbrdMgr.setPrimaryClip(clipData)
-
-        //Snackbar.make(, R.string.done_message, 1500).show()
     }
 
 
@@ -85,8 +93,6 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
             updateCountdownUI()
 
             secondsRemaining = millisUntilFinished / 1000
-//            secText.text = secondsRemaining.toString()
-            // TODO: make progress bar for list items
 
             if (millisUntilFinished < 1000L || updateCall) {
                 secondsRemaining = 30L
@@ -120,11 +126,17 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
             startTimer()
         }
 
-        updateHashes(listCodes)
+        listCodes = updateHashes(listCodes)
+        listAdapter.notifyDataSetChanged()
     }
 
 
     private fun updateCountdownUI() {
-        //countdown.progress = (timerLengthSeconds - secondsRemaining).toInt()
+        countdown.progress = (timerLengthSeconds - secondsRemaining).toInt()
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        val a = 1
     }
 }
