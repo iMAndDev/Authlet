@@ -24,4 +24,8 @@
     <string name="field_empty_error">Деякі поля не заповнені</string>
     <string name="secret_too_short_error">Перепровірте секрет</string>
     <string name="done_message">Готово!</string>
+
+    <string name="english">Англійська</string>
+    <string name="ukrainian">Українська</string>
+    <string name="russian">Російська</string>
 </resources>

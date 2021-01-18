@@ -36,4 +36,7 @@
     <string name="field_empty_error">Some of fields are empty</string>
     <string name="secret_too_short_error">Double-check your secret</string>
     <string name="done_message">Done!</string>
+    <string name="english">English</string>
+    <string name="ukrainian">Ukrainian</string>
+    <string name="russian">Russian</string>
 </resources>

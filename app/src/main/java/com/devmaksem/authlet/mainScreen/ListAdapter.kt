@@ -1,4 +1,4 @@
-package com.devmaksem.authlet
+package com.devmaksem.authlet.mainScreen
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.devmaksem.authlet.R
+import com.devmaksem.authlet.mainScreen.item.ListItem
 
 class ListAdapter(private val listener: (ListItem) -> Unit) :
     RecyclerView.Adapter<ListAdapter.CodeViewHolder>() {

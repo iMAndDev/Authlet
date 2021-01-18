@@ -1,5 +1,6 @@
-package com.devmaksem.authlet
+package com.devmaksem.authlet.ext
 
+import com.devmaksem.authlet.mainScreen.item.ListItem
 import dev.turingcomplete.kotlinonetimepassword.GoogleAuthenticator
 import java.util.*
 

@@ -3,15 +3,12 @@ package="com.devmaksem.authlet">
 
 <application
     android:allowBackup="true"
+    android:name=".app.App"
     android:icon="@drawable/app_logo"
     android:label="@string/app_name"
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
-    <activity
-        android:name=".SettingsFragment"
-        android:label="@string/title_activity_settings" />
-
 
     <activity android:name=".ActivityContainer">
         <intent-filter>

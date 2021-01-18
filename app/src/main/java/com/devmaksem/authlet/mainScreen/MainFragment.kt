@@ -1,4 +1,4 @@
-package com.devmaksem.authlet
+package com.devmaksem.authlet.mainScreen
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -12,7 +12,11 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.devmaksem.authlet.R
 import com.devmaksem.authlet.base.BaseFragment
+import com.devmaksem.authlet.ext.updateCall
+import com.devmaksem.authlet.ext.updateHashes
+import com.devmaksem.authlet.mainScreen.dummy.listCodes
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : BaseFragment(R.layout.fragment_main) {
