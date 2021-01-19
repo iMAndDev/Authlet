@@ -4,8 +4,11 @@ import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.devmaksem.authlet.app.DARK_THEME
+import com.devmaksem.authlet.app.SAVED_LANGUAGE
+import com.devmaksem.authlet.app.SAVED_THEME
+import com.devmaksem.authlet.app.WHITE_THEME
 import com.devmaksem.authlet.settings.languageSettings.Languages
-import com.devmaksem.authlet.settings.languageSettings.SAVED_LANGUAGE
 import java.util.*
 
 class ActivityContainer : AppCompatActivity(R.layout.activity_container) {
@@ -23,6 +26,14 @@ class ActivityContainer : AppCompatActivity(R.layout.activity_container) {
             }
             Languages.RUSSIAN.name -> {
                 setLanguage(Languages.RUSSIAN.language)
+            }
+        }
+        when (sharedPreferences.getString(SAVED_THEME, WHITE_THEME)) {
+            WHITE_THEME -> {
+                setTheme(R.style.AppTheme)
+            }
+            DARK_THEME -> {
+                setTheme(R.style.DarkTheme)
             }
         }
     }

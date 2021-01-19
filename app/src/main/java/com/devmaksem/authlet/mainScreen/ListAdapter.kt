@@ -12,55 +12,56 @@ import com.devmaksem.authlet.mainScreen.item.ListItem
 
 class ListAdapter(private val listener: (ListItem) -> Unit) :
     RecyclerView.Adapter<ListAdapter.CodeViewHolder>() {
-        var listOfItems = ArrayList<ListItem> ()
+    var listOfItems = ArrayList<ListItem>()
 
-        fun setItems(newArrayList: ArrayList<ListItem>) {
-            listOfItems.clear()
-            listOfItems.addAll(newArrayList)
-        }
+    fun setItems(newArrayList: List<ListItem>) {
+        listOfItems.clear()
+        listOfItems.addAll(newArrayList)
+    }
 
-        inner class CodeViewHolder(itemView: View, context: Context) : RecyclerView.ViewHolder(itemView) {
+    class CodeViewHolder(itemView: View, context: Context) : RecyclerView.ViewHolder(itemView) {
 
-            val itemTitle: TextView = itemView.findViewById(R.id.item_title)
-            val itemDesc: TextView = itemView.findViewById(R.id.item_description)
-            val itemPicture: ImageView = itemView.findViewById(R.id.item_image)
-            val delete: ImageView = itemView.findViewById(R.id.delete_item)
-            init {
-                itemView.setOnClickListener {
+        val itemTitle: TextView = itemView.findViewById(R.id.item_title)
+        val itemDesc: TextView = itemView.findViewById(R.id.item_description)
+        val itemPicture: ImageView = itemView.findViewById(R.id.item_image)
+        val delete: ImageView = itemView.findViewById(R.id.delete_item)
 
-                    /*val clip = ClipData.newPlainText("RANDOM UUID",textToCopy)
-                    clipboard.setPrimaryClip(clip)*/
+        init {
+            itemView.setOnClickListener {
 
-                    //Toast.makeText(this,"Copied to clipboard", Toast.LENGTH_LONG).show()
-                }
-            }
+                /*val clip = ClipData.newPlainText("RANDOM UUID",textToCopy)
+                clipboard.setPrimaryClip(clip)*/
 
-        }
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CodeViewHolder {
-            val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_list, parent, false)
-
-            return CodeViewHolder(view, parent.context)
-        }
-
-        override fun onBindViewHolder(holder: CodeViewHolder, position: Int) {
-            val codeItem = listOfItems[position]
-
-            holder.itemTitle.text = codeItem.title
-            holder.itemDesc.text = codeItem.description
-            //holder.itemImage = codeItem.image
-
-            holder.itemView.setOnClickListener{
-                listener(codeItem)
-            }
-
-            holder.delete.setOnClickListener{
-                listOfItems.remove(codeItem)
-                notifyDataSetChanged()
+                //Toast.makeText(this,"Copied to clipboard", Toast.LENGTH_LONG).show()
             }
         }
 
-        override fun getItemCount(): Int = listOfItems.size
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CodeViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_list, parent, false)
+
+        return CodeViewHolder(view, parent.context)
+    }
+
+    override fun onBindViewHolder(holder: CodeViewHolder, position: Int) {
+        val codeItem = listOfItems[position]
+
+        holder.itemTitle.text = codeItem.title
+        holder.itemDesc.text = codeItem.generatedHash
+        //holder.itemImage = codeItem.image
+
+        holder.itemView.setOnClickListener {
+            listener(codeItem)
+        }
+
+        holder.delete.setOnClickListener {
+            listOfItems.remove(codeItem)
+            notifyDataSetChanged()
+        }
+    }
+
+    override fun getItemCount(): Int = listOfItems.size
 
 }

@@ -13,8 +13,8 @@ fun generateHash(secret: String): String {
 
 fun updateHashes(list: ArrayList<ListItem>): ArrayList<ListItem> {
     for (item in list) {
-        val newHash = generateHash(item.description)
-        item.description = newHash
+        val newHash = generateHash(item.generatedHash)
+        item.generatedHash = newHash
         //TODO: u know da way
     }
 

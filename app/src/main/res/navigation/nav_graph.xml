@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@+id/loginFragment">
+    app:startDestination="@id/mainFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -23,12 +23,20 @@
         <action
             android:id="@+id/action_settingsFragment_to_changeLanguageFragment"
             app:destination="@id/changeLanguageFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_changeThemeFragment"
+            app:destination="@id/changeThemeFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/changeLanguageFragment"
         android:name="com.devmaksem.authlet.settings.languageSettings.ChangeApplicationLanguageFragment"
-        tools:layout="@layout/fragment_change_appliacation_language" />
+        tools:layout="@layout/fragment_change_application_language" />
+
+    <fragment
+        android:id="@+id/changeThemeFragment"
+        android:name="com.devmaksem.authlet.settings.themeSettings.ChangeApplicationTheme"
+        tools:layout="@layout/fragment_change_application_theme" />
 
     <fragment
         android:id="@+id/mainFragment"

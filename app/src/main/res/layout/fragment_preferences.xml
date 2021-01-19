@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="?attr/primaryBackgroundColor">
 
     <TextView
         android:id="@+id/general"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/general_header"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="@dimen/tiny_margin"
         android:layout_marginStart="@dimen/normal_margin"
-        android:textColor="@color/colorAccent"
+        android:layout_marginTop="@dimen/tiny_margin"
+        android:text="@string/general_header"
+        android:textColor="?attr/primaryTextColor"
         android:textSize="@dimen/pref_category_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
 
         />
 
@@ -24,40 +24,43 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/preference_height"
         android:layout_marginStart="@dimen/tiny_margin"
+        android:layout_marginTop="@dimen/normal_margin"
         android:layout_marginEnd="@dimen/tiny_margin"
-        app:layout_constraintTop_toBottomOf="@id/general"
+        android:background="?attr/primarySettingItemBackgroundColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="@dimen/normal_margin">
+        app:layout_constraintTop_toBottomOf="@id/general">
 
         <ImageView
             android:id="@+id/lang_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/tiny_margin"
+            android:layout_marginTop="@dimen/tiny_margin"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_language_black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="@dimen/tiny_margin"
-            android:src="@drawable/ic_language_black"
-            android:layout_marginTop="@dimen/tiny_margin"/>
+            app:tint="?attr/primaryTextColor" />
 
         <TextView
             android:id="@+id/lang_cap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/lang_image"
-            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="@dimen/tiny_margin"
             android:layout_marginTop="@dimen/tiny_margin"
             android:text="@string/language_title"
+            android:textColor="?attr/primaryTextColor"
             android:textSize="@dimen/preference_text_size"
-            android:textColor="@color/colorPrimaryLight"/>
+            app:layout_constraintStart_toEndOf="@id/lang_image"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/so_smol_margin"
             android:text="@string/changes_lang"
-            android:textColor="@color/colorPrimaryHint"
+            android:textColor="?attr/primaryTextColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="@id/lang_cap"
@@ -75,8 +78,8 @@
         android:layout_marginStart="@dimen/tiny_margin"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="@dimen/tiny_margin"
+        android:background="?attr/primarySettingItemBackgroundColor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/language">
 
@@ -84,32 +87,34 @@
             android:id="@+id/theme_pic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="@dimen/tiny_margin"
             android:layout_marginTop="@dimen/tiny_margin"
-            android:src="@drawable/ic_theme_black" />
+            android:contentDescription="@null"
+            android:src="@drawable/ic_theme_black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/primaryTextColor" />
 
         <TextView
             android:id="@+id/theme_cap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/theme_pic"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="@dimen/tiny_margin"
             android:layout_marginStart="@dimen/tiny_margin"
+            android:layout_marginTop="@dimen/tiny_margin"
             android:text="@string/theme_header"
-            android:textColor="@color/colorPrimaryLight"
-            android:textSize="@dimen/preference_text_size" />
+            android:textColor="?attr/primaryTextColor"
+            android:textSize="@dimen/preference_text_size"
+            app:layout_constraintStart_toEndOf="@id/theme_pic"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/theme_cap"
-            app:layout_constraintTop_toBottomOf="@id/theme_cap"
             android:layout_marginTop="@dimen/so_smol_margin"
             android:text="@string/changes_lang"
-            android:textColor="@color/colorPrimaryHint" />
+            android:textColor="?attr/primaryTextColor"
+            app:layout_constraintStart_toStartOf="@id/theme_cap"
+            app:layout_constraintTop_toBottomOf="@id/theme_cap" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -117,37 +122,36 @@
         android:id="@+id/credits_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/tiny_margin"
         android:text="@string/version_header"
-        android:textColor="@color/colorAccent"
+        android:textColor="?attr/primaryTextColor"
         android:textSize="@dimen/pref_category_text_size"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="@dimen/tiny_margin"
-        android:layout_marginStart="@dimen/normal_margin"
-        app:layout_constraintTop_toBottomOf="@id/theme"
-        />
+        app:layout_constraintTop_toBottomOf="@id/theme" />
 
     <TextView
         android:id="@+id/version"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/version_desc_header"
-        android:textColor="@color/colorPrimaryHint"
-        android:textSize="@dimen/pref_category_text_size"
-        android:layout_marginTop="@dimen/tiny_margin"
         android:layout_marginStart="@dimen/medium_margin"
-        app:layout_constraintTop_toBottomOf="@+id/credits_header"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:layout_marginTop="@dimen/tiny_margin"
+        android:text="@string/version_desc_header"
+        android:textColor="?attr/primaryTextColor"
+        android:textSize="@dimen/pref_category_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/credits_header" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/tiny_margin"
         android:text="@string/dev_credit"
-        android:textColor="@color/colorPrimaryHint"
+        android:textColor="?attr/primaryTextColor"
         android:textSize="@dimen/pref_category_text_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="@dimen/tiny_margin"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

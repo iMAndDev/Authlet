@@ -2,12 +2,17 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="primaryBackgroundColor">@color/colorWhite</item>
+        <item name="primaryTextColor">@color/colorBlack</item>
+        <item name="primaryCardBackgroundColor">@color/colorWhite</item>
+        <item name="primarySettingItemBackgroundColor">@color/colorWhite</item>
     </style>
 
-    <style name="AppTheme.NoActionBar"/>
-
+    <style name="DarkTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="primaryBackgroundColor">@color/colorBlack</item>
+        <item name="primaryTextColor">@color/colorWhite</item>
+        <item name="primaryCardBackgroundColor">@color/darkGreyCard</item>
+        <item name="primarySettingItemBackgroundColor">@color/colorSettingsItem</item>
+    </style>
 
 </resources>
