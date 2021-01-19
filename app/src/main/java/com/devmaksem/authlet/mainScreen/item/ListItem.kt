@@ -1,4 +1,4 @@
-package com.devmaksem.authlet
+package com.devmaksem.authlet.mainScreen.item
 
 data class ListItem (
     var title: String = "",

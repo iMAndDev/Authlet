@@ -19,7 +19,7 @@
 
         />
 
-    <androidx.cardview.widget.CardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/language"
         android:layout_width="match_parent"
         android:layout_height="@dimen/preference_height"
@@ -31,73 +31,87 @@
         android:layout_marginTop="@dimen/normal_margin">
 
         <ImageView
+            android:id="@+id/lang_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="@dimen/tiny_margin"
             android:src="@drawable/ic_language_black"
             android:layout_marginTop="@dimen/tiny_margin"/>
 
         <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/tiny_margin"
-        android:layout_marginEnd="@dimen/medium_margin"
-        android:text="@string/language_title"
-        android:textSize="@dimen/preference_text_size"
-        android:textColor="@color/colorPrimaryLight"/>
-
-        <TextView
+            android:id="@+id/lang_cap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="@dimen/medium_margin"
-            android:layout_marginTop="@dimen/tiny_margin"
-            android:text="@string/changes_lang"
-            android:textColor="@color/colorPrimaryHint"/>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/theme"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/preference_height"
-        android:layout_marginStart="@dimen/tiny_margin"
-        android:layout_marginEnd="@dimen/tiny_margin"
-        app:layout_constraintTop_toBottomOf="@id/language"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="@dimen/normal_margin">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
+            app:layout_constraintStart_toEndOf="@id/lang_image"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="@dimen/tiny_margin"
-            android:src="@drawable/ic_theme_black"
-            android:layout_marginTop="@dimen/tiny_margin"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/tiny_margin"
-            android:layout_marginEnd="@dimen/normal_margin"
-            android:text="@string/theme_header"
+            android:text="@string/language_title"
             android:textSize="@dimen/preference_text_size"
             android:textColor="@color/colorPrimaryLight"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="@dimen/medium_margin"
-            android:layout_marginTop="@dimen/tiny_margin"
+            android:layout_marginTop="@dimen/so_smol_margin"
             android:text="@string/changes_lang"
-            android:textColor="@color/colorPrimaryHint"/>
+            android:textColor="@color/colorPrimaryHint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/lang_cap"
+            app:layout_constraintTop_toBottomOf="@id/lang_cap"
 
-    </androidx.cardview.widget.CardView>
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/theme"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/preference_height"
+        android:layout_marginStart="@dimen/tiny_margin"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="@dimen/tiny_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/language">
+
+        <ImageView
+            android:id="@+id/theme_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/tiny_margin"
+            android:layout_marginTop="@dimen/tiny_margin"
+            android:src="@drawable/ic_theme_black" />
+
+        <TextView
+            android:id="@+id/theme_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/theme_pic"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/tiny_margin"
+            android:layout_marginStart="@dimen/tiny_margin"
+            android:text="@string/theme_header"
+            android:textColor="@color/colorPrimaryLight"
+            android:textSize="@dimen/preference_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/theme_cap"
+            app:layout_constraintTop_toBottomOf="@id/theme_cap"
+            android:layout_marginTop="@dimen/so_smol_margin"
+            android:text="@string/changes_lang"
+            android:textColor="@color/colorPrimaryHint" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/credits_header"

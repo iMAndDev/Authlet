@@ -18,15 +18,21 @@
 
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.devmaksem.authlet.SettingsFragment"
-        tools:layout="@layout/fragment_preferences"
-        >
-
+        android:name="com.devmaksem.authlet.settings.SettingsFragment"
+        tools:layout="@layout/fragment_preferences">
+        <action
+            android:id="@+id/action_settingsFragment_to_changeLanguageFragment"
+            app:destination="@id/changeLanguageFragment" />
     </fragment>
 
     <fragment
+        android:id="@+id/changeLanguageFragment"
+        android:name="com.devmaksem.authlet.settings.languageSettings.ChangeApplicationLanguageFragment"
+        tools:layout="@layout/fragment_change_appliacation_language" />
+
+    <fragment
         android:id="@+id/mainFragment"
-        android:name="com.devmaksem.authlet.MainFragment"
+        android:name="com.devmaksem.authlet.mainScreen.MainFragment"
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_addCodeFragment"
@@ -39,7 +45,7 @@
 
     <fragment
         android:id="@+id/addCodeFragment"
-        android:name="com.devmaksem.authlet.AddCodeFragment"
+        android:name="com.devmaksem.authlet.addCode.AddCodeFragment"
         tools:layout="@layout/add_code_fragment">
         <action
             android:id="@+id/action_addCodeFragment_to_mainFragment"

@@ -1,8 +1,13 @@
-package com.devmaksem.authlet
+package com.devmaksem.authlet.addCode
 
 import android.os.Bundle
 import android.view.View
+import com.devmaksem.authlet.R
 import com.devmaksem.authlet.base.BaseFragment
+import com.devmaksem.authlet.ext.generateHash
+import com.devmaksem.authlet.mainScreen.dummy.listCodes
+import com.devmaksem.authlet.mainScreen.item.ListItem
+import com.devmaksem.authlet.ext.updateCall
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.add_code_fragment.*
 
