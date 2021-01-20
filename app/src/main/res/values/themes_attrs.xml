@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="primaryBackgroundColor" format="reference" />
+    <attr name="primaryTextColor" format="reference" />
+    <attr name="primaryCardBackgroundColor" format="reference" />
+    <attr name="primarySettingItemBackgroundColor" format="reference" />
+
+</resources>

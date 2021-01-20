@@ -11,7 +11,7 @@
     <dimen name="big_margin">100dp</dimen>
 
     <!-- Dimensions of UI components. -->
-    <dimen name="login_cap_size">35dp</dimen>
+    <dimen name="login_cap_size">35sp</dimen>
     <dimen name="logo_size">256dp</dimen>
     <dimen name="preference_height">90dp</dimen>
     <dimen name="button_text">18sp</dimen>

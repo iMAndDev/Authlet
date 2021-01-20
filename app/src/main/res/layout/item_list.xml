@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/item_cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/tiny_margin"
     android:layout_marginStart="@dimen/so_smol_margin"
+    android:layout_marginTop="@dimen/tiny_margin"
     android:layout_marginEnd="@dimen/so_smol_margin"
     android:clickable="true"
+    app:cardBackgroundColor="?attr/primaryCardBackgroundColor"
     android:focusable="true"
     android:foreground="?selectableItemBackground"
     app:cardCornerRadius="10dp">
@@ -28,6 +29,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
+            android:contentDescription="@null"
             android:src="@mipmap/ic_launcher_round" />
 
         <LinearLayout
@@ -46,17 +48,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/tiny_margin"
-                android:text="Some title"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textColor="?attr/primaryTextColor"
+                android:textSize="20sp"
+                tools:text="Some title" />
 
             <TextView
                 android:id="@+id/item_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/tiny_margin"
-                android:text="Some description"
-                android:textSize="20sp"/>
+                android:textColor="?attr/primaryTextColor"
+                android:textSize="20sp"
+                tools:text="Some description" />
 
         </LinearLayout>
 
@@ -64,11 +67,13 @@
             android:id="@+id/delete_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="@dimen/delete_button_size"
             android:layout_alignTop="@id/linear"
             android:layout_alignBottom="@id/linear"
             android:layout_alignParentEnd="true"
-            android:src="@drawable/ic_delete_black" />
+            android:contentDescription="@null"
+            android:minWidth="@dimen/delete_button_size"
+            android:src="@drawable/ic_delete_black"
+            app:tint="?attr/primaryTextColor" />
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

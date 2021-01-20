@@ -5,15 +5,14 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
 import com.devmaksem.authlet.R
+import com.devmaksem.authlet.app.SAVED_LANGUAGE
 import com.devmaksem.authlet.base.BaseFragment
 import com.devmaksem.authlet.settings.languageSettings.Languages.*
-import kotlinx.android.synthetic.main.fragment_change_appliacation_language.*
+import kotlinx.android.synthetic.main.fragment_change_application_language.*
 import java.util.*
 
-const val SAVED_LANGUAGE = "SAVED_LANGUAGE"
-
 class ChangeApplicationLanguageFragment :
-    BaseFragment(R.layout.fragment_change_appliacation_language) {
+    BaseFragment(R.layout.fragment_change_application_language) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

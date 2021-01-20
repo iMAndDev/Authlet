@@ -4,6 +4,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/primaryBackgroundColor"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -13,6 +14,7 @@
         android:id="@+id/app_logo"
         android:layout_width="@dimen/logo_size"
         android:layout_height="@dimen/logo_size"
+        android:contentDescription="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,26 +24,27 @@
         android:id="@+id/login_cap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/login_cap_size"
         android:text="@string/login_caption"
-        android:textColor="@color/colorPrimary"
         android:textAlignment="center"
+        android:textColor="?attr/primaryTextColor"
         android:textSize="@dimen/login_cap_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/app_logo"
         app:layout_constraintBottom_toTopOf="@id/passwordField"
-        android:layout_marginBottom="@dimen/login_cap_size"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_logo" />
 
     <EditText
         android:id="@+id/passwordField"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:importantForAutofill="yes"
         android:layout_marginTop="@dimen/tiny_margin"
         android:hint="@string/prompt_password"
-        android:textColorHint="@color/colorHint"
+        android:importantForAutofill="yes"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
+        android:textColor="?attr/primaryTextColor"
+        android:textColorHint="?attr/primaryTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/login_cap" />
@@ -51,26 +54,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:enabled="true"
         android:background="@drawable/gradient_color"
+        android:enabled="true"
         android:text="@string/action_sign_in"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/button_text"
         app:layout_constraintBottom_toTopOf="@id/credits"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/passwordField"/>
+        app:layout_constraintTop_toBottomOf="@id/passwordField" />
 
     <TextView
         android:id="@+id/credits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/tiny_margin"
         android:text="@string/dev_credit"
-        android:textColor="@color/colorPrimary"
+        android:textColor="?attr/primaryTextColor"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="@dimen/tiny_margin" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,6 +15,10 @@ class SettingsFragment : BaseFragment(R.layout.fragment_preferences) {
         language.setOnClickListener {
             findNavController().navigate(R.id.action_settingsFragment_to_changeLanguageFragment)
         }
+
+        theme.setOnClickListener {
+            findNavController().navigate(R.id.action_settingsFragment_to_changeThemeFragment)
+        }
     }
 
 }
