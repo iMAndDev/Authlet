@@ -69,6 +69,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         super.onResume()
         isTimerAvailable = true
         secondsRemaining = 30L
+
         startTimer()
     }
 

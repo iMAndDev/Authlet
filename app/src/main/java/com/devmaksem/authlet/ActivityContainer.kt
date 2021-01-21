@@ -45,5 +45,6 @@ class ActivityContainer : AppCompatActivity(R.layout.activity_container) {
         config.setLocale(locale)
         this.createConfigurationContext(config)
         resources.updateConfiguration(config, resources.displayMetrics)
+        val a = 10000000
     }
 }
