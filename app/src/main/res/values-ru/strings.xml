@@ -28,4 +28,12 @@
     <string name="english">Английский</string>
     <string name="ukrainian">Украинский</string>
     <string name="russian">Русский</string>
+    <string name="please_choose_theme">Пожалуйста, выберите тему:</string>
+    <string name="white_theme">Светлая тема</string>
+    <string name="black_theme">Темная тема</string>
+    <string name="sort_by">Сортировка:</string>
+    <string name="title">Название</string>
+    <string name="hash">Код</string>
+    <string name="copied">Код скопирован в буфер обмена</string>
+    <string name="code_added">Код добавлен в список</string>
 </resources>

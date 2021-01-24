@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contextAddCode"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="@dimen/tiny_margin">
@@ -44,13 +45,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="?attr/actionBarSize"
         android:layout_marginEnd="?attr/actionBarSize"
-        android:layout_marginBottom="@dimen/logo_size"
+        android:layout_marginTop="@dimen/logo_size"
         android:text="@string/buttontext_add_code"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/button_text"
         android:background="@drawable/gradient_color"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/valueSecret"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
