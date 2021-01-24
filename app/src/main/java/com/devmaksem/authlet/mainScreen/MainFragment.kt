@@ -16,6 +16,8 @@ import com.devmaksem.authlet.ext.updateCall
 import com.devmaksem.authlet.ext.updateHashes
 import com.devmaksem.authlet.mainScreen.dummy.listCodes
 import com.devmaksem.authlet.mainScreen.item.ListItem
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : BaseFragment(R.layout.fragment_main) {
@@ -53,23 +55,23 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
             findNavController(it).navigate(R.id.action_mainFragment_to_addCodeFragment)
         }
 
-        countdown.max = timerLengthSeconds.toInt()
+
         setAdapter()
-        startTimer()
+        initTimer()
     }
 
     override fun onPause() {
         super.onPause()
         isTimerAvailable = false
-        timer!!.cancel()
+        countdown.progress = 0
+        //timer!!.cancel()
     }
 
 
     override fun onResume() {
         super.onResume()
         isTimerAvailable = true
-        secondsRemaining = 30L
-        startTimer()
+        updateCountdownUI()
     }
 
 
@@ -79,6 +81,8 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
 
         val clipData = ClipData.newPlainText("text", desc)
         clipbrdMgr.setPrimaryClip(clipData)
+
+        Snackbar.make(containerMain, R.string.copied, 3000).show()
     }
 
 
@@ -100,7 +104,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
 
             secondsRemaining = millisUntilFinished / 1000
 
-            if (millisUntilFinished < 1000L || updateCall) {
+            if ((millisUntilFinished < 1000L) || updateCall) {
                 secondsRemaining = 30L
                 updateTimer(secondsRemaining * 1000)
                 updateCall = false
@@ -108,8 +112,18 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         }
 
         override fun onFinish() {
-            Toast.makeText(context, "Done!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Refreshed", Toast.LENGTH_SHORT).show()
         }
+    }
+
+
+    private fun initTimer() {
+        if (timer != null) {
+            timer!!.cancel()
+            countdown.progress = 0
+        }
+        countdown.max = timerLengthSeconds.toInt()
+        startTimer()
     }
 
 
@@ -139,8 +153,6 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
     private fun updateCountdownUI() {
         if (isTimerAvailable) {
             countdown.progress = (timerLengthSeconds - secondsRemaining).toInt()
-        } else {
-            //nothing
         }
     }
 

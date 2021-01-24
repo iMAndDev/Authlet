@@ -27,7 +27,6 @@ class LoginActivity : BaseFragment(R.layout.fragment_login) {
                 else -> {
                     Snackbar.make(container, R.string.login_auth_error, 5000)
                         .show()
-                    //navigation.navigate(R.id.action_loginFragment_to_mainFragment)
                 }
             }
         }

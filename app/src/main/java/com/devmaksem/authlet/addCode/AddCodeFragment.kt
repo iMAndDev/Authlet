@@ -10,6 +10,7 @@ import com.devmaksem.authlet.mainScreen.item.ListItem
 import com.devmaksem.authlet.ext.updateCall
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.add_code_fragment.*
+import kotlinx.android.synthetic.main.fragment_main.*
 
 class AddCodeFragment: BaseFragment(R.layout.add_code_fragment) {
 
@@ -20,15 +21,12 @@ class AddCodeFragment: BaseFragment(R.layout.add_code_fragment) {
 
         addCodeButton?.setOnClickListener {
             if (serviceName.text.isEmpty() || valueSecret.text.isEmpty()) {
+                Snackbar.make(it, R.string.field_empty_error, 1000)
                 errorMessage += R.string.field_empty_error
             }
             if (valueSecret.text.length < 16) {
-                errorMessage += R.string.secret_too_short_error
+                Snackbar.make(it, R.string.secret_too_short_error, 1500)
             }
-            if (errorMessage.isNotEmpty()) {
-                Snackbar.make(it, errorMessage, 7000)
-            }
-
             if (valueSecret.text.length >= 16 &&
                 serviceName.text.isNotEmpty() &&
                 valueSecret.text.isNotEmpty()
@@ -37,14 +35,12 @@ class AddCodeFragment: BaseFragment(R.layout.add_code_fragment) {
                 val item = ListItem(serviceName.text.toString(), hash)
 
                 listCodes.add(item)
-                updateCall = true
 
                 serviceName.text = null
                 valueSecret.text = null
 
-                Snackbar.make(it, R.string.done_message, 1000)
-                Thread.sleep(200)
                 androidx.navigation.Navigation.findNavController(it).navigate(R.id.action_addCodeFragment_to_mainFragment)
+
             }
         }
     }

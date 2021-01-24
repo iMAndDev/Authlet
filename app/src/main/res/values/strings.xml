@@ -40,9 +40,11 @@
     <string name="ukrainian">Ukrainian</string>
     <string name="russian">Russian</string>
     <string name="please_choose_theme">Please, choose theme:</string>
-    <string name="white_theme">White Theme</string>
-    <string name="black_theme">Black Theme</string>
+    <string name="white_theme">Light Theme</string>
+    <string name="black_theme">Dark Theme</string>
     <string name="sort_by">Sort by:</string>
     <string name="title">Title</string>
-    <string name="hash">Hash</string>
+    <string name="hash">Code</string>
+    <string name="copied">Code copied to clipboard</string>
+    <string name="code_added">Code added to list</string>
 </resources>
