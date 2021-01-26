@@ -1,57 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/contextAddCode"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/tiny_margin">
+    android:layout_marginTop="@dimen/tiny_margin"
+    android:background="?attr/primaryBackgroundColor">
 
 
     <EditText
         android:id="@+id/serviceName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/big_margin"
         android:layout_marginStart="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/big_margin"
         android:layout_marginEnd="?attr/actionBarSize"
+        android:background="?attr/primaryEditTextColor"
         android:ems="10"
-        android:inputType="text"
+        android:padding="15dp"
         android:hint="@string/codename_hint"
-        android:textColorHint="@color/colorHint"
-        app:layout_constraintTop_toTopOf="parent"
+        android:inputType="text"
+        android:textColor="?attr/primaryTextColor"
+        android:textColorHint="?attr/primaryTextColor"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/valueSecret"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/medium_margin"
         android:layout_marginStart="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/medium_margin"
         android:layout_marginEnd="?attr/actionBarSize"
+        android:background="?attr/primaryEditTextColor"
         android:ems="10"
-        android:inputType="textPassword"
+        android:padding="15dp"
         android:hint="@string/codesecret_hint"
-        android:textColorHint="@color/colorHint"
-        app:layout_constraintTop_toTopOf="@id/serviceName"
+        android:inputType="textPassword"
+        android:textColor="?attr/primaryTextColor"
+        android:textColorHint="?attr/primaryTextColor"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="@id/serviceName" />
 
     <Button
         android:id="@+id/addCodeButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="?attr/actionBarSize"
-        android:layout_marginEnd="?attr/actionBarSize"
         android:layout_marginTop="@dimen/logo_size"
+        android:layout_marginEnd="?attr/actionBarSize"
+        android:background="@drawable/gradient_color"
         android:text="@string/buttontext_add_code"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/button_text"
-        android:background="@drawable/gradient_color"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/valueSecret"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/valueSecret" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

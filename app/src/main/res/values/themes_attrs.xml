@@ -5,5 +5,5 @@
     <attr name="primaryTextColor" format="reference" />
     <attr name="primaryCardBackgroundColor" format="reference" />
     <attr name="primarySettingItemBackgroundColor" format="reference" />
-
+    <attr name="primaryEditTextColor" format="reference" />
 </resources>
