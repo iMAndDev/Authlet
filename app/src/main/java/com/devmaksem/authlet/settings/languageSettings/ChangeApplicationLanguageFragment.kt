@@ -32,7 +32,7 @@ class ChangeApplicationLanguageFragment :
         }
 
         switch_to_eng.setOnClickListener {
-            //setLanguage(ENGLISH.language)
+            setLanguage(ENGLISH.language)
             with(sharedPreferences?.edit()) {
                 this?.putString(SAVED_LANGUAGE, ENGLISH.name)
                 this?.apply()
