@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import com.devmaksem.authlet.R
 import com.devmaksem.authlet.base.BaseFragment
+import com.devmaksem.authlet.data.Secret
 import com.devmaksem.authlet.ext.generateHash
 import com.devmaksem.authlet.mainScreen.dummy.listCodes
 import com.devmaksem.authlet.mainScreen.item.ListItem
@@ -35,6 +36,12 @@ class AddCodeFragment: BaseFragment(R.layout.add_code_fragment) {
                 val item = ListItem(serviceName.text.toString(), hash)
 
                 listCodes.add(item)
+
+                //Creating secret entity
+                val secret = Secret(0, serviceName.text.toString(), valueSecret.text.toString())
+
+                //Adding secret to db
+
 
                 serviceName.text = null
                 valueSecret.text = null
