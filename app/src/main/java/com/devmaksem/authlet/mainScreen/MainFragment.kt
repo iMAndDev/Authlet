@@ -3,7 +3,6 @@ package com.devmaksem.authlet.mainScreen
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
-import android.content.res.Configuration
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
@@ -11,23 +10,18 @@ import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devmaksem.authlet.R
 import com.devmaksem.authlet.base.BaseFragment
-import com.devmaksem.authlet.data.SecretDao
-import com.devmaksem.authlet.data.SecretRepository
 import com.devmaksem.authlet.ext.updateCall
 import com.devmaksem.authlet.ext.updateHashes
 import com.devmaksem.authlet.mainScreen.dummy.listCodes
-import com.devmaksem.authlet.mainScreen.item.ListItem
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : BaseFragment(R.layout.fragment_main) {
 
-    private lateinit var secretRepository: SecretRepository
     private val timerLengthSeconds = 30L
     private var secondsRemaining = 30L
     private var timer: Timer? = null
     private var isTimerAvailable = true
-
 
     private lateinit var listAdapter: ListAdapter
 
@@ -47,9 +41,16 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         }
 
         sort_by_title.setOnClickListener {
+            val currentList = listCodes
+            currentList.sortBy { it.title }
+            listAdapter.setItems(currentList)
+            listAdapter.notifyDataSetChanged()
         }
 
         sort_by_hash.setOnClickListener {
+            listCodes.sortBy { it.generatedHash }
+            listAdapter.setItems(listCodes)
+            listAdapter.notifyDataSetChanged()
         }
 
         fab_add.setOnClickListener {
@@ -77,8 +78,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
 
 
     private fun copyCode(desc: String) {
-        val clipbrdMgr = requireContext()
-            .getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val clipbrdMgr = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
 
         val clipData = ClipData.newPlainText("text", desc)
         clipbrdMgr.setPrimaryClip(clipData)
@@ -92,6 +92,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
             adapter = listAdapter
             layoutManager = LinearLayoutManager(context)
         }
+        listCodes.sortBy { it.generatedHash }
         listAdapter.setItems(listCodes)
     }
 
@@ -155,10 +156,5 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         if (isTimerAvailable) {
             countdown.progress = (timerLengthSeconds - secondsRemaining).toInt()
         }
-    }
-
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-        val a = 1
     }
 }
