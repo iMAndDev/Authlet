@@ -7,21 +7,22 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
-import android.widget.Toast
 import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devmaksem.authlet.R
 import com.devmaksem.authlet.base.BaseFragment
+import com.devmaksem.authlet.data.SecretDao
+import com.devmaksem.authlet.data.SecretRepository
 import com.devmaksem.authlet.ext.updateCall
 import com.devmaksem.authlet.ext.updateHashes
 import com.devmaksem.authlet.mainScreen.dummy.listCodes
 import com.devmaksem.authlet.mainScreen.item.ListItem
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : BaseFragment(R.layout.fragment_main) {
 
+    private lateinit var secretRepository: SecretRepository
     private val timerLengthSeconds = 30L
     private var secondsRemaining = 30L
     private var timer: Timer? = null
@@ -112,7 +113,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         }
 
         override fun onFinish() {
-            Toast.makeText(context, "Refreshed", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(context, "Refreshed", Toast.LENGTH_SHORT).show()
         }
     }
 
