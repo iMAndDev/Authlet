@@ -1,8 +1,7 @@
 package com.devmaksem.authlet.mainScreen
 
-import androidx.lifecycle.ViewModel
+import com.devmaksem.authlet.base.BaseViewModel
 
-class MainViewModel : ViewModel(){
-
+class MainViewModel() : BaseViewModel(){
 
 }

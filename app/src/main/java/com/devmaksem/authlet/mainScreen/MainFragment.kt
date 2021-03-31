@@ -15,9 +15,11 @@ import com.devmaksem.authlet.ext.updateHashes
 import com.devmaksem.authlet.mainScreen.dummy.listCodes
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_main.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : BaseFragment(R.layout.fragment_main) {
 
+    private val viewModel: MainViewModel by viewModel()
     private val timerLengthSeconds = 30L
     private var secondsRemaining = 30L
     private var timer: Timer? = null
